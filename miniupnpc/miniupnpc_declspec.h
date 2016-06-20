@@ -9,7 +9,7 @@
 		#define MINIUPNP_LIBSPEC __declspec(dllimport)
 	#endif
 #else
-	#if defined(__GNUC__) && __GNUC__ >= 4
+	#if defined(__GNUC__) && __GNUC__ >= 4 && !defined(MINIUPNP_STATICLIB)
 		/* fix dynlib for OS X 10.9.2 and Apple LLVM version 5.0 */
 		#define MINIUPNP_LIBSPEC __attribute__ ((visibility ("default")))
 	#else
